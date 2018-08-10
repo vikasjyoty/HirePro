@@ -7,7 +7,7 @@ namespace HireProSol.Models
     {
 
         public ApplicationDbContext()
-            : base("MyContext")
+            : base("DefaultConnection")
         {
         }
 
@@ -16,5 +16,8 @@ namespace HireProSol.Models
             return new ApplicationDbContext();
         }
 
+        public DbSet<License> Licenses { get; set; }
+
+        public DbSet<LicenseType> LicenseTypes { get; set; }
     }
 }
