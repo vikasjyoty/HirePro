@@ -126,3 +126,9 @@ C:\Users\vikas\source\repos\HireProSol\HireProSol\obj\Debug\HireProSol.csproj.Co
 C:\Users\vikas\source\repos\HireProSol\HireProSol\obj\Debug\HireProSol.csproj.CopyComplete
 C:\Users\vikas\source\repos\HireProSol\HireProSol\obj\Debug\HireProSol.dll
 C:\Users\vikas\source\repos\HireProSol\HireProSol\obj\Debug\HireProSol.pdb
+C:\Users\vikas\source\repos\HireProSol\HireProSol\bin\MySql.Data.dll
+C:\Users\vikas\source\repos\HireProSol\HireProSol\bin\MySql.Data.Entity.EF6.dll
+C:\Users\vikas\source\repos\HireProSol\HireProSol\bin\MySql.Data.xml
+C:\Users\vikas\source\repos\HireProSol\HireProSol\bin\MySql.Data.Entity.EF6.xml
+C:\Users\vikas\source\repos\HireProSol\HireProSol\obj\Debug\EdisonWebMVC.Migrations.init.resources
+C:\Users\vikas\source\repos\HireProSol\HireProSol\obj\Debug\HireProSol.csproj.GenerateResource.cache
