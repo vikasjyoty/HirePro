@@ -5,7 +5,7 @@
         <nav class="sidebar-nav">
             
             <ul id="sidebarnav">
-                @if (User.IsInRole("Admin"))
+                @if (!User.IsInRole("Admin"))
                 {
                     <li class="nav-devider"></li>
                     <li class="nav-label">Home</li>

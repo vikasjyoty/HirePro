@@ -222,6 +222,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LicensesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1028,6 +1029,11 @@
     <Content Include="Views\Shared\_TopNavBar.cshtml" />
     <Content Include="Views\Shared\_ScriptFoot.cshtml" />
     <Content Include="Views\Shared\_ScriptHead.cshtml" />
+    <Content Include="Views\Licenses\Create.cshtml" />
+    <Content Include="Views\Licenses\Delete.cshtml" />
+    <Content Include="Views\Licenses\Details.cshtml" />
+    <Content Include="Views\Licenses\Edit.cshtml" />
+    <Content Include="Views\Licenses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

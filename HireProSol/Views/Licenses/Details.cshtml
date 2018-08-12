@@ -1,0 +1,91 @@
+﻿@model HireProSol.Models.License
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Detail</h4>
+                        <p class="card-description">
+                            License
+                        </p>
+                        <div class="table-responsive col-md-6">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayNameFor(model => model.Type.LicenseTypeDesc)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(model => model.Type.LicenseTypeDesc)
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayNameFor(model => model.Key)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(model => model.Key)
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayNameFor(model => model.CreatedOn)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(model => model.CreatedOn)
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayNameFor(model => model.IsBlocked)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(model => model.IsBlocked)
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayNameFor(model => model.BlockedOn)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(model => model.BlockedOn)
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            }
+                        </div>
+                        
+                    </div>
+                    <p>
+                        <a href="@Url.Action("Edit", "Licenses",new { id=Model.Id })" class="btn btn-warning">
+                            Edit
+                            <span class="icon-note" aria-hidden="true"></span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+<a href="@Url.Action("Index", "Licenses")" class="btn btn-primary">
+    Back to List
+    <span class="icon-list" aria-hidden="true"></span>
+</a>
