@@ -47,7 +47,10 @@
                                     </div>
                                 </div>
                                 <p>
-                                    @Html.ActionLink("Register as a new user", "Register")
+                                    @Html.ActionLink("Register as a new caregiver", "Register", new { profileType = "caregiver" })
+                                </p>
+                                <p>
+                                    @Html.ActionLink("Register as a new user", "Register",new { profileType="cutomer" })
                                 </p>
 
                             }

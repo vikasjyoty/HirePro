@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HireProSol.Models
 {
@@ -79,6 +80,31 @@ namespace HireProSol.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [StringLength(100)]
+        public string FirstName { get; set; }
+        [StringLength(100)]
+        public string LastName { get; set; }
+
+        public int? Type_Id { get; set; }
+        [ForeignKey("Type_Id")]
+        public virtual Type Type { get; set; }
+
+        public string Address { get; set; }
+        [StringLength(10)]
+        public string PinCode { get; set; }
+        public int City_Id { get; set; }
+        [ForeignKey("City_Id")]
+        public virtual City City { get; set; }
+
+
+        public int Age { get; set; }
+        [StringLength(1000)]
+        public string ProfilePicUrl { get; set; }
+        [StringLength(100)]
+        public string ResumeHeadline { get; set; }
+        public string Desc { get; set; }
+        public string PhoneNumber { get; set; }
     }
 
     public class ResetPasswordViewModel

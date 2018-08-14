@@ -17,6 +17,7 @@ namespace HireProSol.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -137,8 +138,14 @@ namespace HireProSol.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(string profileType)
         {
+            ViewBag.City_Id = new SelectList(db.Cities, "Id", "Name");
+            ViewBag.Type_Id = new SelectList(db.Types, "Id", "TypeName");
+            HttpCookie myCookie = new HttpCookie("Prof");
+            myCookie.Value = profileType;
+            Response.Cookies.Add(myCookie);
+
             return View();
         }
 
@@ -149,16 +156,29 @@ namespace HireProSol.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            ViewBag.City_Id = new SelectList(db.Cities, "Id", "Name");
+            ViewBag.Type_Id = new SelectList(db.Types, "Id", "TypeName", model.Type_Id);
+            HttpCookie myCookie = Request.Cookies["Prof"];
+
+
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,PhoneNumber =model.PhoneNumber,ProfilePicUrl=model.ProfilePicUrl,
+                                                 Desc=model.Desc, ResumeHeadline = model.ResumeHeadline ,City_Id = model.City_Id,Type_Id = model.Type_Id,
+                                                 Address=model.Address,PinCode=model.PinCode};
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // This is to add a user role while he is being registred.
-                    UserManager.AddToRole(user.Id, "Customer");
+                    if (myCookie.Value == "customer")
+                        UserManager.AddToRole(user.Id, "Customer");
+
+                    if (myCookie.Value == "caregive")
+                        UserManager.AddToRole(user.Id, "Caregiver");
+
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
