@@ -221,6 +221,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UserServicesController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LicensesController.cs" />
@@ -1054,6 +1055,11 @@
     <Content Include="Views\Services\ServiceType.cshtml" />
     <Content Include="Views\Services\SelectService.cshtml" />
     <Content Include="Views\Services\SubmitComplete.cshtml" />
+    <Content Include="Views\UserServices\Create.cshtml" />
+    <Content Include="Views\UserServices\Delete.cshtml" />
+    <Content Include="Views\UserServices\Details.cshtml" />
+    <Content Include="Views\UserServices\Edit.cshtml" />
+    <Content Include="Views\UserServices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

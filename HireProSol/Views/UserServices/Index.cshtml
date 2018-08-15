@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HireProSol.Models.ApplicationUserService>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body p-3">
+                <h4 class="card-title">Service Requests</h4>
+                <div class="table-responsive m-t-40">
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Care Giver
+                                </th>
+                                <th>
+                                    Service
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Customer
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestedOn)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Caregiver.FirstName) @Html.DisplayFor(modelItem => item.Caregiver.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Service.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Status.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User.FirstName) @Html.DisplayFor(modelItem => item.User.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestedOn)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", "userservices",new { id=item.Service_Id })" class="btn btn-warning">
+                                            Edit
+                                            <span class="icon-note" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="@Url.Action("Details", "userservices",new { id=item.Service_Id })" class="btn btn-warning">
+                                            Details
+                                            <span class="icon-info" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "userservices",new { id=item.Service_Id })" class="btn btn-warning">
+                                            Delete
+                                            <span class="icon-trash" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

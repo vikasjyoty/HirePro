@@ -10,6 +10,7 @@ using HireProSol.Models;
 
 namespace HireProSol.Controllers
 {
+    [Authorize]
     public class ServicesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -1,0 +1,94 @@
+﻿@model HireProSol.Models.ApplicationUserService
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Delete</h4>
+                <p class="card-description">
+                    Service Request
+                </p>
+                <div class="table-responsive col-md-6">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <table class="table table-hover text-left">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Caregiver
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(model => model.Caregiver.FirstName) @Html.DisplayFor(model => model.Caregiver.LastName)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Service requested
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(model => model.Service.Name)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Status
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(model => model.Status.Name)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        Customer Name
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(model => model.User.FirstName) @Html.DisplayFor(model => model.User.LastName)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayNameFor(model => model.RequestedOn)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(model => model.RequestedOn)
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        @using (Html.BeginForm())
+                                        {
+                                            @Html.AntiForgeryToken()
+
+                                                <input type="submit" value="Delete" class="btn btn-warning" /> 
+                                        }
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<a href="@Url.Action("Index", "UserServices")" class="btn btn-primary">
+    Back to List
+    <span class="icon-list" aria-hidden="true"></span>
+</a>

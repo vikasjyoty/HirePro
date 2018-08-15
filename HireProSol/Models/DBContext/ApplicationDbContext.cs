@@ -26,7 +26,7 @@ namespace HireProSol.Models
 
         public DbSet<Type> Types { get; set; }
 
-        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Status> Status { get; set; }
 
         public DbSet<ApplicationUserService> ApplicationUserServices { get; set; }
 
