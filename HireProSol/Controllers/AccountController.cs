@@ -142,6 +142,7 @@ namespace HireProSol.Controllers
         {
             ViewBag.City_Id = new SelectList(db.Cities, "Id", "Name");
             ViewBag.Type_Id = new SelectList(db.Types, "Id", "TypeName");
+            ViewBag.Type = profileType;
             HttpCookie myCookie = new HttpCookie("Prof");
             myCookie.Value = profileType;
             Response.Cookies.Add(myCookie);
@@ -159,11 +160,12 @@ namespace HireProSol.Controllers
             ViewBag.City_Id = new SelectList(db.Cities, "Id", "Name");
             ViewBag.Type_Id = new SelectList(db.Types, "Id", "TypeName", model.Type_Id);
             HttpCookie myCookie = Request.Cookies["Prof"];
+            HttpCookie userCookie = new HttpCookie("UserId");            
 
 
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,PhoneNumber =model.PhoneNumber,ProfilePicUrl=model.ProfilePicUrl,
+                var user = new ApplicationUser { UserName = model.Email,FirstName=model.FirstName,LastName=model.LastName, Email = model.Email,PhoneNumber =model.PhoneNumber,ProfilePicUrl=model.ProfilePicUrl,
                                                  Desc=model.Desc, ResumeHeadline = model.ResumeHeadline ,City_Id = model.City_Id,Type_Id = model.Type_Id,
                                                  Address=model.Address,PinCode=model.PinCode};
 
@@ -185,6 +187,8 @@ namespace HireProSol.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    userCookie.Value = user.Id;
+                    Response.Cookies.Add(userCookie);
 
                     return RedirectToAction("Index", "Home");
                 }

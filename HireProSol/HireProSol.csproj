@@ -659,6 +659,9 @@
     <Content Include="images\rangeSliderimg\sprite-skin-simple.png" />
     <Content Include="images\sanfran.jpg" />
     <Content Include="images\scrollable\view-1-1200x800.jpg" />
+    <Content Include="images\services\caregiver-logo.jpg" />
+    <Content Include="images\services\companion.jpg" />
+    <Content Include="images\services\medical-logo.jpg" />
     <Content Include="images\smile.png" />
     <Content Include="images\tooltip\Euclid.png" />
     <Content Include="images\user-1.png" />
@@ -1047,6 +1050,10 @@
     <Content Include="Views\Services\Details.cshtml" />
     <Content Include="Views\Services\Edit.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Services\SelectCareGiver.cshtml" />
+    <Content Include="Views\Services\ServiceType.cshtml" />
+    <Content Include="Views\Services\SelectService.cshtml" />
+    <Content Include="Views\Services\SubmitComplete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

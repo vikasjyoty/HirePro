@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HireProSol.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Services</h4>
+            </div>
+            <div class="card-body">
+                <a href="/Services/SelectService?typeid=1">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="~/images/services/medical-logo.jpg" alt="Allison Walker" />
+                            </div>
+                        </header>
+                        <h3>CNA Services</h3>
+                        <div class="desc">
+                            Get in-home services from our certified nurses.
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Services</h4>
+            </div>
+            <div class="card-body">
+                <a href="/Services/SelectService?typeid=2">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="~/images/services/companion.jpg" alt="Allison Walker" />
+                            </div>
+                        </header>
+                        <h3>Companionship</h3>
+                        <div class="desc">
+                            Caregiver who will be your freind
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Services</h4>
+            </div>
+            <div class="card-body">
+                <a href="/Services/SelectService?typeid=3">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="~/images/services/caregiver-logo.jpg" alt="Allison Walker" />
+                            </div>
+                        </header>
+                        <h3>Assisted Living</h3>
+                        <div class="desc">
+                            We can help with your daily chors
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

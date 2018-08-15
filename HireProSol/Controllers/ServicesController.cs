@@ -13,12 +13,67 @@ namespace HireProSol.Controllers
     public class ServicesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private string _userId;
+        public string UserId
+        {
+            get
+            {
+                return _userId = HttpContext.Request.Cookies["UserId"].Value;
+            }
+        }
 
         // GET: Services
         public ActionResult Index()
         {
             var services = db.Services.Include(s => s.Type);
             return View(services.ToList());
+        }
+
+        public ActionResult SelectService(int typeid)
+        {
+            var services = db.Services.Where(s => s.Type_Id==typeid);
+            ViewBag.typeid = typeid;
+            return View(services.ToList());
+        }
+
+        // GET: Services
+        public ActionResult ServiceType()
+        {
+            return View();
+        }
+        // GET: Services/SelectCareGiver
+        public ActionResult SelectCareGiver(int typeid,int serviceid)
+        {
+            var caregivers = db.Users.Where(s=>s.Type_Id==typeid);
+            ViewBag.serviceid = serviceid;
+            return View(caregivers.ToList());
+        }
+
+        // GET: Services
+        public ActionResult SubmitService(string caregiverid, int serviceid)
+        {
+            ApplicationUserService aps = new ApplicationUserService();
+            aps.Caregiver_Id = caregiverid;
+            aps.Service_Id = serviceid;
+            aps.Status_Id = 1;
+            aps.Users_Id = UserId;
+            aps.RequestedOn = DateTime.Now;
+            aps.Frequency = 1;
+
+            var user = db.Users.Find(UserId);
+            user.ApplicationUserServices.Add(aps);
+            db.SaveChanges();
+
+            ViewBag.serviceid = serviceid;
+            return RedirectToAction("SubmitComplete" , new { serviceid = serviceid});
+        }
+
+        public ActionResult SubmitComplete( int serviceid)
+        {
+            var aps = db.ApplicationUserServices.Where(s=>s.Service_Id==serviceid && s.Users_Id == UserId).FirstOrDefault();
+
+            ViewBag.serviceid = serviceid;
+            return View(aps);
         }
 
         // GET: Services/Details/5

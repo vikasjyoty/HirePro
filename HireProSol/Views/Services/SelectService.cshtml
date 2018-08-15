@@ -1,0 +1,34 @@
+﻿@model IEnumerable<HireProSol.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4">
+            <div class="card">
+                <a href="/Services/SelectCareGiver?typeid=@item.Type_Id&serviceid=@item.ServiceId ">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Allison Walker" />
+                            </div>
+                        </header>
+
+                        <h3>@item.Name</h3>
+                        <div class="desc">
+                            @item.Type.TypeName
+                        </div>
+                        <div class="contacts">
+                            <a href=""><i class="fa fa-plus"></i></a>
+                            <a href=""><i class="fa fa-whatsapp"></i></a>
+                            <a href=""><i class="fa fa-envelope"></i></a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    }
+</div>

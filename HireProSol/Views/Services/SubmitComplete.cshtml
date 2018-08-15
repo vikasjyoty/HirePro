@@ -1,0 +1,26 @@
+﻿@model HireProSol.Models.ApplicationUserService
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-two">
+                    <header class="text-center">
+                        <div class="avatar">
+                            <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Allison Walker" />
+                        </div>
+                    </header>                   
+                    
+                    <h3>@Model.Service.Name</h3>
+                    <div class="desc text-success">
+                        Thank You. Your request has been recieved for
+                        @Model.Caregiver.FirstName @Model.Caregiver.LastName will get back to you for confirmation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</div>
