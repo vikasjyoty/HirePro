@@ -4,8 +4,93 @@
 
 
 
+@model IEnumerable<HireProSol.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+}
+
 <div class="row">
-    <div class="col-md-6">
-        <h2>Getting started</h2>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Services</h4>
+            </div>
+            <div class="card-body">
+                <a href="/Services/SelectService?typeid=1">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="https://png.icons8.com/cotton/96/000000/doctors-bag.png">
+                            </div>
+                        </header>
+                        <h3>CNA Services</h3>
+                        <div class="desc">
+                            In-home services from certified nurses.
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
+    <!-- /# column -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Services</h4>
+            </div>
+            <div class="card-body">
+                <a href="/Services/SelectService?typeid=2">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="https://png.icons8.com/color/96/000000/trust.png">
+                            </div>
+                        </header>
+                        <h3>Companionship</h3>
+                        <div class="desc">
+                            Caregiver who will be your freind
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-title">
+                <h4>Services</h4>
+            </div>
+            <div class="card-body">
+                <a href="/Services/SelectService?typeid=3">
+                    <div class="card-two">
+                        <header>
+                            <div class="avatar">
+                                <img src="http://www.comfortlife.ca/images/care-icons/assisted-living-icon.svg" alt="Allison Walker" />
+                            </div>
+                        </header>
+                        <h3>Assisted Living</h3>
+                        <div class="desc">
+                            Help with your daily chors
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<br />
+<a href="https://icons8.com">Icon pack by Icons8</a>

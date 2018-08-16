@@ -630,6 +630,7 @@
     <Content Include="images\gallery\chair3.jpg" />
     <Content Include="images\gallery\chair4.jpg" />
     <Content Include="images\hand.jpg" />
+    <Content Include="images\Homebg.jpg" />
     <Content Include="images\lights.jpg" />
     <Content Include="images\logo-text.png" />
     <Content Include="images\logo.png" />
